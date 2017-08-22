@@ -28,8 +28,6 @@ jobs:
         
       - run: yarn test
 
-      - add_ssh_keys
-
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "release" ]; then
