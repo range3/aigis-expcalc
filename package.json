@@ -1,0 +1,89 @@
+{
+  "name": "aigis-expcalc",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "range3",
+  "license": "MIT",
+  "browserslist": [
+    "last 2 versions",
+    "IE 11"
+  ],
+  "scripts": {
+    "start": "webpack-dev-server --progress",
+    "deploy": "yarn build && gh-pages -d public",
+    "build": "NODE_ENV=production webpack",
+    "lint": "eslint src webpack.config.babel.js",
+    "test": "yarn lint && jest --coverage"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-compat": "^1.0.4",
+    "eslint-plugin-import": "^2.7.0",
+    "gh-pages": "^1.0.0",
+    "jest": "^20.0.4",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": [
+                  "last 2 Chrome versions"
+                ]
+              }
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": [
+                  "last 2 versions",
+                  "IE 11"
+                ]
+              }
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base"
+    ],
+    "plugins": [
+      "compat"
+    ],
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "rules": {
+      "semi": [
+        2,
+        "never"
+      ],
+      "no-unexpected-multiline": 2,
+      "compat/compat": 2
+    }
+  }
+}

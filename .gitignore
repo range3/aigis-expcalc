@@ -1,0 +1,5 @@
+/*.log
+node_modules/
+/coverage/
+
+public/js/bundle.js
