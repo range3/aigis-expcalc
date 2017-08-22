@@ -27,3 +27,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       - run: yarn test
+
+      - deploy:
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "release" ]; then
+              yarn deploy
+            fi
