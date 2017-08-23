@@ -31,23 +31,53 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "jquery": "^3.2.1"
   },
   "babel": {
     "env": {
       "development": {
         "presets": [
-          [ "env", { "targets": { "browsers": [ "last 2 Chrome versions" ] } } ]
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": [
+                  "last 2 Chrome versions"
+                ]
+              }
+            }
+          ]
         ]
       },
       "test": {
         "presets": [
-          [ "env", { "targets": { "browsers": [ "last 2 versions", "IE 11" ] } } ]
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": [
+                  "last 2 versions",
+                  "IE 11"
+                ]
+              }
+            }
+          ]
         ]
       },
       "production": {
         "presets": [
-          [ "env", { "targets": { "browsers": [ "last 2 versions", "IE 11" ] } } ]
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": [
+                  "last 2 versions",
+                  "IE 11"
+                ]
+              }
+            }
+          ]
         ]
       }
     }
