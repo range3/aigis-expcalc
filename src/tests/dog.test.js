@@ -1,4 +1,4 @@
-import Dog from './dog'
+import Dog from '../dog'
 
 test('Dog.bark', () => {
   const testDog = new Dog('Test')

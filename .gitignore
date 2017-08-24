@@ -2,4 +2,5 @@
 node_modules/
 /coverage/
 
-public/js/bundle.js
+/public/*
+!.gitkeep
