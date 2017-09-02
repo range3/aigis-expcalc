@@ -4,18 +4,15 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import PurifyCSSPlugin from 'purifycss-webpack'
-import bootstrapEntryPoints from './webpack.bootstrap.config'
 
 const WDS_PORT = 8080
 const isProd = process.env.NODE_ENV === 'production'
 const cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader',
-  use: ['css-loader', 'sass-loader'],
+  use: ['css-loader', 'postcss-loader', 'sass-loader'],
 })
 const cssDev = ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
 const cssConfig = isProd ? cssProd : cssDev
-const bootstrapConfig = isProd ?
-  bootstrapEntryPoints.prod : bootstrapEntryPoints.dev
 
 const BASE_PLUGINS = [
   new webpack.optimize.OccurrenceOrderPlugin(),
@@ -54,16 +51,11 @@ const BASE_PLUGINS = [
   new PurifyCSSPlugin({
     paths: glob.sync(path.join(__dirname, 'src/**/*.html')),
   }),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'commons',
-    chunks: ['main', 'bootstrap'],
-  }),
 ]
 
 
 export default {
   entry: {
-    bootstrap: bootstrapConfig,
     main: [
       './src/main.scss',
       './src/main.js',
@@ -82,6 +74,7 @@ export default {
     compress: true,
     hot: true,
     stats: 'errors-only',
+    historyApiFallback: true,
   },
   devtool: isProd ? false : 'source-map',
   module: {
@@ -90,6 +83,10 @@ export default {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.scss$/,

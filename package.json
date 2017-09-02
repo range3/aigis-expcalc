@@ -17,12 +17,12 @@
     "clean": "rimraf ./public/*"
   },
   "devDependencies": {
+    "autoprefixer": "^7.1.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
-    "bootstrap-loader": "^2.2.0",
     "css-loader": "^0.28.5",
     "eslint": "^4.5.0",
     "eslint-config-airbnb-base": "^11.3.1",
@@ -40,6 +40,7 @@
     "node-sass": "^4.5.3",
     "postcss": "^6.0.9",
     "postcss-loader": "^2.0.6",
+    "precss": "^2.0.0",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "resolve-url-loader": "^2.1.0",
@@ -124,6 +125,5 @@
       "no-unexpected-multiline": 2,
       "compat/compat": 2
     }
-  },
-  "postcss": {}
+  }
 }
