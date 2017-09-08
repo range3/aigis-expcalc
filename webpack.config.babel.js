@@ -4,6 +4,7 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import PurifyCSSPlugin from 'purifycss-webpack'
+import { LicenseWebpackPlugin } from 'license-webpack-plugin'
 
 const WDS_PORT = 8080
 const isProd = process.env.NODE_ENV === 'production'
@@ -118,6 +119,11 @@ export default {
         output: {
           comments: false,
         },
+      }),
+      new LicenseWebpackPlugin({
+        pattern: /^(.*)$/,
+        filename: 'licenses.txt',
+        perChunkOutput: false,
       }),
     ])
     : BASE_PLUGINS.concat([
