@@ -30,6 +30,8 @@ jobs:
 
       - deploy:
           command: |
+            git config --global user.name "circleci"
+            git config --global user.email "white.line.oar@gmail.com"
             if [ "${CIRCLE_BRANCH}" == "release" ]; then
               yarn deploy
             fi
