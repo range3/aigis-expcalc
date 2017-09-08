@@ -65,7 +65,7 @@ export default {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'assets/js/[name].bundle.js',
-    publicPath: '/',
+    publicPath: '/aigis-expcalc/',
     jsonpFunction: 'commons',
   },
   devServer: {
