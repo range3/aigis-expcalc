@@ -3,7 +3,6 @@ import glob from 'glob'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import PurifyCSSPlugin from 'purifycss-webpack'
 import { LicenseWebpackPlugin } from 'license-webpack-plugin'
 
 const WDS_PORT = 8080
@@ -48,9 +47,6 @@ const BASE_PLUGINS = [
     filename: 'assets/css/[name].css',
     disable: !isProd,
     allChunks: true,
-  }),
-  new PurifyCSSPlugin({
-    paths: glob.sync(path.join(__dirname, 'src/**/*.html')),
   }),
 ]
 
