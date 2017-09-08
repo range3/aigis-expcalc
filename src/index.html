@@ -12,94 +12,42 @@
 			<a class="navbar-brand" href="#">アイギス経験値計算機</a>
 		</nav>
 
-    <div class="container-fluid">
-      <div class="row justify-content-center no-gutters unit-status">
-
-        <div class="col-sm-2">
-          <div class="unit-icon">
-            <span class="unit-icon-frame rounded icons-sprite icons-frame-black">
-              <span class="unit-icon-grade icons-grade-1 icons-sprite"></span>
-            </span>
-          </div>
-        </div>
-        <div class="col-sm-10">
-          <div class="property-box">
-            <div class="property">
-              <span class="property-level">Lv1 →  Lv70</span>
-              <span class="property-required-exp">12345</span>
-              <span class="property-suffix">必要な経験値</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row unit-exp-progress">
-        <div class="col">
-          <span>経験値</span>
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 40.5%" aria-valuenow="40.5" aria-valuemin="0" aria-valuemax="100">40.5%</div>
-            <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row materials">
-        <div class="col">
-          <span>必要素材</span>
-          <ul>
-            <li>
-              <span class="unit-icon-frame rounded icons-sprite icons-frame-platinum">
-              </span>
-              プラチナアーマー
-              <span class="badge badge-primary">x10</span>
-            </li>
-            <li>
-              <span class="unit-icon-frame rounded icons-sprite icons-frame-platinum">
-              </span>
-              白精霊
-              <span class="badge badge-primary">x30</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="row">
+    <div id="app" class="container-fluid">
+      <div class="row inputs">
         <div class="col">
           <div class="input-rarity">
             <label for="rarity-id" class="rarity-label">レアリティ</label>
-            <select id="rarity-id" class="form-control">
-              <option value="rarity-iron"    >アイロン</option>
-              <option value="rarity-bronze"  >ブロンズ</option>
-              <option value="rarity-silver"  >シルバー</option>
-              <option value="rarity-gold"    >ゴールド</option>
-              <option value="rarity-sapphire">サファイア</option>
-              <option value="rarity-platinum">プラチナ</option>
-              <option value="rarity-black"   selected>ブラック</option>
+            <select id="rarity-id" name="rarity-id" class="form-control">
+              <option value="1">アイロン</option>
+              <option value="2">ブロンズ</option>
+              <option value="3">シルバー</option>
+              <option value="4">ゴールド</option>
+              <option value="6">サファイア</option>
+              <option value="5">プラチナ</option>
+              <option value="7" selected>ブラック</option>
             </select>
           </div>
 
           <div class="input-grades">
             <div class="grades-label">クラスチェンジ/覚醒</div>
-            <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-outline-dark active">
-                <input type="radio" name="grades" id="grade-0"
-                autocomplete="off" checked>
+            <div id="grade-id" class="btn-group" data-toggle="buttons">
+              <label class="btn btn-outline-dark">
+                <input type="radio" name="grades" value="0" autocomplete="off">
                 <span class="icons-sprite"></span>
                 CC前
               </label>
-              <label class="btn btn-outline-dark">
-                <input type="radio" name="grades" id="grade-1" autocomplete="off">
+              <label class="btn btn-outline-dark active">
+                <input type="radio" name="grades" value="1" autocomplete="off" checked>
                 <span class="icons-grade-1 icons-sprite"></span>
                 CC
               </label>
               <label class="btn btn-outline-dark">
-                <input type="radio" name="grades" id="grade-2" autocomplete="off">
+                <input type="radio" name="grades" value="2" autocomplete="off">
                 <span class="icons-grade-2 icons-sprite"></span>
                 覚醒
               </label>
               <label class="btn btn-outline-dark">
-                <input type="radio" name="grades" id="grade-3" autocomplete="off">
+                <input type="radio" name="grades" value="3" autocomplete="off">
                 <span class="icons-grade-3 icons-sprite"></span>
                 第2覚醒
               </label>
@@ -107,8 +55,8 @@
           </div>
 
           <div class="input-current-level">
-            <label for="current-level-id">現在のレベル</label>
-            <select id="current-level-id" class="form-control">
+            <label for="current-level">現在のレベル</label>
+            <select id="current-level" name="current-level" class="form-control">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -116,76 +64,141 @@
           </div>
 
           <div class="input-remain-exp">
-            <label for="remain-exp-id">次のレベルまであと</label>
+            <label for="remain-exp">次のレベルまであと</label>
             <div class="input-group">
               <span class="input-group-btn">
-                <button class="btn btn-dark" type="button">-</button>
+                <button class="btn btn-dark" name="minus-1k" type="button">-1k</button>
               </span>
-              <input type="text" class="form-control">
               <span class="input-group-btn">
-                <button class="btn btn-dark" type="button">+</button>
+                <button class="btn btn-dark" name="minus-100" type="button">-100</button>
+              </span>
+              <span class="input-group-btn">
+                <button class="btn btn-dark" name="minus-10" type="button">-10</button>
+              </span>
+              <span class="input-group-btn">
+                <button class="btn btn-dark" name="minus-1" type="button">-1</button>
+              </span>
+              <input type="text" id="remain-exp" name="remain-exp" class="form-control">
+              <span class="input-group-btn">
+                <button class="btn btn-dark" name="plus-1" type="button">+1</button>
+              </span>
+              <span class="input-group-btn">
+                <button class="btn btn-dark" name="plus-10" type="button">+10</button>
+              </span>
+              <span class="input-group-btn">
+                <button class="btn btn-dark" name="plus-100" type="button">+100</button>
+              </span>
+              <span class="input-group-btn">
+                <button class="btn btn-dark" name="plus-1k" type="button">+1k</button>
               </span>
             </div>
           </div>
+
+          <div class="input-saliet">
+            <label>
+              <input type="checkbox" name="saliet" value="1">
+              育成の精霊サリエット
+            </label>
+          </div>
+
+
         </div>
 
-        <div class="col">
-          <button class="btn btn-primary feed-btn btn-block" type="button">
-            <div class="row">
-              <div class="col">
-                <span class="unit-icon-frame rounded icons-sprite icons-frame-platinum">
-                </span>
-                <span class="unit-icon-frame rounded icons-sprite icons-frame-platinum">
-                </span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <span class="unit-icon-frame rounded icons-sprite icons-frame-platinum">
-                </span>
-                <span class="unit-icon-frame rounded icons-sprite icons-frame-platinum">
-                </span>
-              </div>
-            </div>
-            <span>プラチナアーマー8倍煮込み</span>
-          </button>
+      </div>
 
-          <button class="btn btn-primary feed-btn btn-block" type="button">
-            <div class="row">
-              <div class="col">
-                <span class="unit-icon-frame rounded icons-sprite icons-frame-black">
-                </span>
-                <span class="unit-icon-frame rounded icons-sprite icons-frame-black">
-                </span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <span class="unit-icon-frame rounded icons-sprite icons-frame-black">
-                </span>
-                <span class="unit-icon-frame rounded icons-sprite icons-frame-black">
-                </span>
-              </div>
-            </div>
-            <span>ブラックアーマー8倍煮込み</span>
-          </button>
+      <div class="row">
+        <div class="col-sm-6">
 
-          <button class="btn btn-primary feed-btn btn-block" type="button">
-            <div class="row">
-              <div class="col">
-                <span class="unit-icon-frame rounded icons-sprite icons-frame-black">
-                </span>
+          <div class="base-unit">
+            <h2>ベースユニット</h2>
+
+            <div class="row justify-content-center no-gutters unit-status">   
+              <div class="col-sm-3">
+                <div id="base-unit-icon" class="unit-icon">
+                  <span class="unit-icon-frame rounded icons-sprite icons-frame-black">
+                    <span class="unit-icon-grade icons-grade-1 icons-sprite"></span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="col-sm-9">
+                <div class="property-box">
+                  <div class="property">
+                    <span class="prefix">必要な経験値</span>
+                    <span class="property-required-exp">12345</span>
+                    <span class="property-level">Lv1 →  Lv70</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="results">
+            <h2>計算結果</h2>
+
+            <div class="progress unit-exp-progress">
+              <div class="progress-bar" role="progressbar" style="width: 40.5%" aria-valuenow="40.5" aria-valuemin="0" aria-valuemax="100">40.5%</div>
+              <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <div class="property-box">
+              <div class="property">
+                <span class="prefix">合成後レベル</span>
+                <span class="level">10</span>
+                <span class="suffix">Lv</span>
+
+                <span class="prefix">獲得経験値合計</span>
+                <span class="gained-exp">10000</span>
+                <span class="suffix">Exp</span>
+
+                <span class="prefix">カンストまであと</span>
+                <span class="remain-exp">300</span>
+                <span class="suffix">Exp</span>
+
+                <span class="prefix">経験値余剰</span>
+                <span class="waste-exp">0</span>
+                <span class="suffix">Exp</span>
+
+                <span class="prefix">必要なゴールド</span>
+                <span class="gold">5000</span>
+                <span class="suffix">G</span>
+
               </div>
             </div>
-            ファラハ
-          </button>
+          </div>
 
-          <button class="btn btn-secondary btn-block" type="button">
-            リセット
-          </button>
+          <div class="materials">
+            <h2>必要素材</h2>
+            <ul>
+              <li>
+                <span class="unit-icon-frame rounded icons-sprite icons-frame-platinum">
+                </span>
+                プラチナアーマー
+                <span class="badge badge-primary">x10</span>
+              </li>
+              <li>
+                <span class="unit-icon-frame rounded icons-sprite icons-frame-platinum">
+                </span>
+                白精霊
+                <span class="badge badge-primary">x30</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <h2>ごはん</h2>
+          <div class="input-feed">
+            <div class="feed-buttons">
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
+
 
     <footer class="footer">
       <div class="container">

@@ -17,7 +17,7 @@
     "clean": "rimraf ./public/*"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^7.1.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^20.0.3",
@@ -123,6 +123,17 @@
         "never"
       ],
       "no-unexpected-multiline": 2,
+      "no-continue": 0,
+      "brace-style": [
+        2,
+        "stroustrup"
+      ],
+      "no-underscore-dangle": [
+        2,
+        {
+          "allowAfterThis": true
+        }
+      ],
       "compat/compat": 2
     }
   }

@@ -11,39 +11,83 @@ body {
   text-align: center;
 }
 
-.unit-status {
+.inputs {
+  border-bottom: 1px solid rgb(150,150,150);
   margin-bottom: 2rem;
+}
+
+.unit-status {
+  margin-bottom: 1rem;
   text-align: center;
+}
 
-  .property-box {
-    background-color: rgb(200, 200, 200);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+.property-box {
+  text-align: center;
+  background-color: rgb(200, 200, 200);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 
-    .property {
-      display: inline-block;
-      line-height: 1;
+  .property {
+    display: inline-block;
+    line-height: 1;
 
-      .property-level {
-        display: block;
-        text-align: left;
-        font-size: 0.8rem;
-      }
+    .property-level {
+      display: block;
+      text-align: right;
+      font-size: 0.8rem;
+    }
 
-      .property-required-exp {
-        display: block;
-        text-align: center;
-        font-size: 5rem;
-      }
+    .property-required-exp {
+      display: block;
+      text-align: center;
+      font-size: 4rem;
+    }
 
-      .property-suffix {
-        display: block;
-        text-align: right;
-        font-size: 0.8rem;
-      }
+    .prefix {
+      display: block;
+      text-align: left;
+      font-size: 0.8rem;
+    }
+
+    .suffix {
+      display: block;
+      text-align: right;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .gold {
+      display: block;
+      text-align: right;
+      font-size: 4rem;
+    }
+
+    .gained-exp {
+      display: block;
+      text-align: right;
+      font-size: 4rem;
+    }
+
+    .level {
+      display: block;
+      text-align: right;
+      font-size: 4rem;
+    }
+
+    .remain-exp {
+      display: block;
+      text-align: right;
+      font-size: 4rem;
+    }
+
+    .waste-exp {
+      display: block;
+      text-align: right;
+      font-size: 4rem;
     }
   }
 }
+
 
 .unit-icon {
 
@@ -58,22 +102,24 @@ body {
   }
 }
 
-.feed-btn {
-}
-
-.unit-exp-progress {
+.results {
   margin-bottom: 1rem;
-  padding: 1rem;
-  background-color: rgb(230, 230, 230);
+
+  .unit-exp-progress {
+    display: none;
+    margin-bottom: 1rem;
+    height: 50px;
+  }
 }
 
 .materials {
+  display: none;
   margin-bottom: 1rem;
-  padding: 1rem;
-  background-color: rgb(230, 230, 230);
 
   ul {
+    padding: 1rem;
     list-style-type: none;
+    background-color: rgb(200, 200, 200);
   }
 
   .unit-icon-frame {
@@ -105,6 +151,35 @@ body {
 
 .input-remain-exp {
   padding-bottom: 1rem;
+}
+
+.feed-btn {
+  width: 300px;
+  .icons-sprite {
+    zoom: 0.5;
+    margin-right: 5px;
+  }
+}
+
+.input-feed {
+  margin-bottom: 1rem;
+  text-align: center;
+
+  .feed-buttons {
+    display: inline-block;
+
+    .feed-view {
+      margin-bottom: 5px;
+      position: relative;
+
+      .feed-count {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        font-size: 3rem;
+      }
+    }
+  }
 }
 
 .footer {
