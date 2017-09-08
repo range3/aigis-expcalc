@@ -232,11 +232,11 @@ class Composition {
           }
 
           if (this.expUnitIdMap[key].standalone) {
-            this.gold_ += this.compositionFee(level, 1)
+            this.gold_ += Composition.compositionFee(level, 1)
           }
           else {
             gainedExp *= 8
-            this.gold_ += this.compositionFee(level, 4)
+            this.gold_ += Composition.compositionFee(level, 4)
           }
           this.gainedExp_ += gainedExp
         }
