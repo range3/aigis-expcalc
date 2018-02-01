@@ -80,4 +80,13 @@ export default [
     standalone: false,
     restricted: false,
   },
+  {
+    id: 10,
+    name: 'ツバサ',
+    icon: 'icons-frame-black',
+    exp: 2830,
+    rarity: 7,
+    standalone: false,
+    restricted: false,
+  },
 ]
