@@ -89,4 +89,13 @@ export default [
     standalone: false,
     restricted: false,
   },
+  {
+    id: 11,
+    name: 'ハニー',
+    icon: 'icons-frame-black',
+    exp: 8210,
+    rarity: 7,
+    standalone: true,
+    restricted: false,
+  },
 ]
