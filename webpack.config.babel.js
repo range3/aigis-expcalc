@@ -35,7 +35,7 @@ const BASE_PLUGINS = [
     Util: 'exports-loader?Util!bootstrap/js/dist/util',
   }),
   new HtmlWebpackPlugin({
-    title: 'Aigis Exp Calculator',
+    title: 'アイギス経験値計算機 | Aigis Exp Calculator',
     minify: {
       collapseWhitespace: isProd,
     },
